@@ -172,8 +172,8 @@ void pre_auton() {
  */
 
 void autonomous(void) {
-  task(brain_display_update);
-  
+  task b(brain_display_update);
+
   auto_started = true;
   switch(current_auton_selection){ 
     case 0:

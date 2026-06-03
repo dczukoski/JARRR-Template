@@ -6,7 +6,7 @@ extern brain Brain;
 //extern motor LeftFront;
 
 //Add your devices below, and don't forget to do the same in robot-config.cpp:
-
-
+extern distance frontLidar; // #TODO - Add Lidar for reset to Drive Constructor
+extern distance rightLidar;
 
 void  vexcodeInit( void );

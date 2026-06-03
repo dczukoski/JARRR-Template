@@ -11,7 +11,8 @@ brain  Brain;
 //motor LeftFront = motor(PORT1, ratio6_1, false);
 
 //Add your devices below, and don't forget to do the same in robot-config.h:
-
+distance frontLidar = distance(PORT1); // #TODO - Add Lidar for reset to Drive Constructor
+distance rightLidar = distance(PORT2);
 
 void vexcodeInit( void ) {
   // nothing to initialize
