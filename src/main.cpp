@@ -130,7 +130,7 @@ void pre_auton() {
     Brain.Screen.printAt(5, 120, "Selected Auton:");
     switch(current_auton_selection){
       case 0:
-        Brain.Screen.printAt(5, 140, "Auton 1");
+        Brain.Screen.printAt(5, 140, "Auton 1"); // #TODO: Change these names to the supplied functions 
         break;
       case 1:
         Brain.Screen.printAt(5, 140, "Auton 2");
@@ -172,6 +172,8 @@ void pre_auton() {
  */
 
 void autonomous(void) {
+  task(brain_display_update);
+  
   auto_started = true;
   switch(current_auton_selection){ 
     case 0:

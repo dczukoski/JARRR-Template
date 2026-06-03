@@ -217,3 +217,23 @@ float clamp_min_voltage(float drive_output, float drive_min_voltage){
   }
   return drive_output;
 }
+
+/**
+ * Updates the brain screen with information. Needs to run as a task.
+ */
+
+void brain_display_update(){
+  while(1){
+    Brain.Screen.clearScreen();
+    Brain.Screen.printAt(5, 20, "JARRR Template v1.2.0");
+    Brain.Screen.printAt(5, 40, "Battery Percentage:");
+    Brain.Screen.printAt(5, 60, "%d", Brain.Battery.capacity());
+    Brain.Screen.printAt(5, 80, "Chassis Heading Reading:");
+    Brain.Screen.printAt(5, 100, "%f", chassis.get_absolute_heading());
+    Brain.Screen.printAt(5, 120, "X Position Reading:");    
+    Brain.Screen.printAt(5, 140, "%f", chassis.get_X_position());
+    Brain.Screen.printAt(5, 160, "Y Position Reading:");    
+    Brain.Screen.printAt(5, 180, "%f", chassis.get_Y_position());
+    task::sleep(25);  
+  }
+}
